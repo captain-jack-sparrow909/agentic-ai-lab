@@ -14,12 +14,12 @@ def run():
     Run the crew.
     """
     inputs = {
-        'topic': 'AI LLMs',
-        'current_year': str(datetime.now().year)
+        'motion': 'There needs to be strict laws to regulate LLMs',
     }
 
     try:
-        Debate().crew().kickoff(inputs=inputs)
+        result = Debate().crew().kickoff(inputs=inputs)
+        print("--result---\n", result.raw)
     except Exception as e:
         raise Exception(f"An error occurred while running the crew: {e}")
 

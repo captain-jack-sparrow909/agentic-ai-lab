@@ -11,29 +11,36 @@ class Debate():
     tasks: list[Task]
 
     @agent
-    def researcher(self) -> Agent:
+    def debater(self) -> Agent:
         return Agent(
-            config=self.agents_config['researcher'], # type: ignore[index]
+            config=self.agents_config['debater'], # type: ignore[index]
             verbose=True
         )
 
     @agent
-    def reporting_analyst(self) -> Agent:
+    def judge(self) -> Agent:
         return Agent(
-            config=self.agents_config['reporting_analyst'], # type: ignore[index]
+            config=self.agents_config['judge'], # type: ignore[index]
             verbose=True
         )
 
     @task
-    def research_task(self) -> Task:
+    def propose(self) -> Task:
         return Task(
-            config=self.tasks_config['research_task'], # type: ignore[index]
+            config=self.tasks_config['propose'], # type: ignore[index]
         )
 
     @task
-    def reporting_task(self) -> Task:
+    def oppose(self) -> Task:
         return Task(
-            config=self.tasks_config['reporting_task'], # type: ignore[index]
+            config=self.tasks_config['oppose'], # type: ignore[index]
+            output_file='report.md'
+        )
+        
+    @task
+    def decide(self) -> Task:
+        return Task(
+            config=self.tasks_config['decide'], # type: ignore[index]
             output_file='report.md'
         )
 
