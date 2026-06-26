@@ -1,6 +1,7 @@
 from crewai import Agent, Crew, Process, Task
 from crewai.project import CrewBase, agent, crew, task
 from crewai.agents.agent_builder.base_agent import BaseAgent
+from crewai_tools import TavilySearchTool
 
 
 @CrewBase
@@ -14,7 +15,8 @@ class FinancialResearcher():
     def researcher(self) -> Agent:
         return Agent(
             config=self.agents_config['researcher'], # type: ignore[index]
-            verbose=True
+            verbose=True,
+            tools=[TavilySearchTool(max_results=2)]
         )
 
     @agent
