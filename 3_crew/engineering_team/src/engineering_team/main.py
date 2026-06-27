@@ -1,13 +1,18 @@
 #!/usr/bin/env python
 import sys
 import warnings
-
 from datetime import datetime
 
+import engineering_team.patch  # noqa: F401 — applies CrewAI MCP monkey-patch on import
 from engineering_team.crew import EngineeringTeam
-import engineering_team.patch
+from .tools.sandbox_tools import reset_sandbox
 
 warnings.filterwarnings("ignore", category=SyntaxWarning, module="pysbd")
+
+# This main file is intended to be a way for you to run your
+# crew locally, so refrain from adding unnecessary logic into this file.
+# Replace with inputs you want to test with, it will automatically
+# interpolate any tasks and agents information
 
 requirements = """
 A simple account management system for a trading simulation platform.
@@ -22,6 +27,7 @@ The system should prevent the user from withdrawing funds that would leave them 
  The system has access to a function get_share_price(symbol) which returns the current price of a share, and includes a test implementation that returns fixed prices for AAPL, TSLA, GOOGL.
 """
 
+
 def run():
     """
     Run the crew.
@@ -31,6 +37,7 @@ def run():
     }
 
     try:
+        reset_sandbox()
         EngineeringTeam().crew().kickoff(inputs=inputs)
     except Exception as e:
         raise Exception(f"An error occurred while running the crew: {e}")
