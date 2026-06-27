@@ -23,6 +23,8 @@ dependencies = [
     { name = "crewai-tools" },
     { name = "gradio" },
     { name = "langchain" },
+    { name = "langchain-openai" },
+    { name = "langchain-openrouter" },
     { name = "langgraph" },
     { name = "openai" },
     { name = "openai-agents" },
@@ -37,6 +39,8 @@ requires-dist = [
     { name = "crewai-tools", specifier = ">=1.14.7" },
     { name = "gradio", specifier = ">=6.19.0" },
     { name = "langchain", specifier = ">=1.3.10" },
+    { name = "langchain-openai", specifier = ">=1.3.3" },
+    { name = "langchain-openrouter", specifier = ">=0.2.4" },
     { name = "langgraph", specifier = ">=1.2.6" },
     { name = "openai", specifier = ">=2.43.0" },
     { name = "openai-agents", specifier = ">=0.17.6" },
@@ -1442,6 +1446,15 @@ wheels = [
 ]
 
 [[package]]
+name = "jsonpath-python"
+version = "1.1.6"
+source = { registry = "https://pypi.org/simple" }
+sdist = { url = "https://files.pythonhosted.org/packages/98/18/4ca8742534a5993ff383f7602e325ce2d5d7cc93d72ac5e1cdedbea8a458/jsonpath_python-1.1.6.tar.gz", hash = "sha256:dded9932b4ec41fb8726e09c83afa4e6be618f938c2db287cc2a81723c639671", size = 88178, upload-time = "2026-05-07T01:26:34.482Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/55/8a/1270a6803bd821cbfcdda387eaa13cb41a7b1f7b9bd145979b3bfb9d6cb7/jsonpath_python-1.1.6-py3-none-any.whl", hash = "sha256:a1c50afd8d3fbbaf47a4873bc890dcb3c15da96f5c020327977d844d8731a2d4", size = 14453, upload-time = "2026-05-07T01:26:33.306Z" },
+]
+
+[[package]]
 name = "jsonpointer"
 version = "3.1.1"
 source = { registry = "https://pypi.org/simple" }
@@ -1588,6 +1601,33 @@ dependencies = [
 sdist = { url = "https://files.pythonhosted.org/packages/12/e3/bea6d0080acf183332f24dcd74c208aee5857cf8f783c3fb0bd86027d8fb/langchain_core-1.4.8.tar.gz", hash = "sha256:5bf1f8411077c904182ad8f975943d36adcbf579c4e017b3a118b719229ebf9a", size = 957974, upload-time = "2026-06-18T19:39:23.636Z" }
 wheels = [
     { url = "https://files.pythonhosted.org/packages/13/d6/bdf6f0481cc57ef300d6b1eb48cf1400c0409be715d6eb3cabadd1142a09/langchain_core-1.4.8-py3-none-any.whl", hash = "sha256:d84c28b05e3ba8d4271d0827aad5b592ccdaaf986e76768c23503f0a2045e8aa", size = 557416, upload-time = "2026-06-18T19:39:21.902Z" },
+]
+
+[[package]]
+name = "langchain-openai"
+version = "1.3.3"
+source = { registry = "https://pypi.org/simple" }
+dependencies = [
+    { name = "langchain-core" },
+    { name = "openai" },
+    { name = "tiktoken" },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/d0/f3/b38e052f943a75ba0e6762c0a50b6f1d6bcd52a9ce63386d8803c2ff506e/langchain_openai-1.3.3.tar.gz", hash = "sha256:143769bf943820b80db769e47ca8fd0aac08ed18714519333b044c4431e9aa67", size = 3256559, upload-time = "2026-06-22T22:54:05.445Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/2f/4b/7520114de1ce36bb17cbc98d0fcda048a9f755bedaeb73b92137aeaaf1db/langchain_openai-1.3.3-py3-none-any.whl", hash = "sha256:e469659862c8aabba4f6653df973206e7be54f98cf2275c86be7f06b7abe20d7", size = 120437, upload-time = "2026-06-22T22:54:03.8Z" },
+]
+
+[[package]]
+name = "langchain-openrouter"
+version = "0.2.4"
+source = { registry = "https://pypi.org/simple" }
+dependencies = [
+    { name = "langchain-core" },
+    { name = "openrouter" },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/35/df/9876dc983cc9ee11e340f5e98da9f1050c5a1fd1a953f01ed020db141e57/langchain_openrouter-0.2.4.tar.gz", hash = "sha256:5af80982d8d7e9bd94bfb91837ca2aecdcb8b8b86c96472ba5a3d1f6c961b190", size = 179074, upload-time = "2026-06-23T03:45:20.726Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/be/18/d25178aa337cdd266cd9e9777d12446bcf5a392245aaaef85506b39dc832/langchain_openrouter-0.2.4-py3-none-any.whl", hash = "sha256:d51dfeed7c2d7716a3394baca885ad2177b6b0d5871f0ccac5fe9392270abd65", size = 28423, upload-time = "2026-06-23T03:45:19.665Z" },
 ]
 
 [[package]]
@@ -2221,6 +2261,21 @@ dependencies = [
 sdist = { url = "https://files.pythonhosted.org/packages/3d/f9/88d94a75de065ea32619465d2f77b29a0469500e99012523b91cc4141cd1/openpyxl-3.1.5.tar.gz", hash = "sha256:cf0e3cf56142039133628b5acffe8ef0c12bc902d2aadd3e0fe5878dc08d1050", size = 186464, upload-time = "2024-06-28T14:03:44.161Z" }
 wheels = [
     { url = "https://files.pythonhosted.org/packages/c0/da/977ded879c29cbd04de313843e76868e6e13408a94ed6b987245dc7c8506/openpyxl-3.1.5-py2.py3-none-any.whl", hash = "sha256:5282c12b107bffeef825f4617dc029afaf41d0ea60823bbb665ef3079dc79de2", size = 250910, upload-time = "2024-06-28T14:03:41.161Z" },
+]
+
+[[package]]
+name = "openrouter"
+version = "0.10.7"
+source = { registry = "https://pypi.org/simple" }
+dependencies = [
+    { name = "httpcore" },
+    { name = "httpx" },
+    { name = "jsonpath-python" },
+    { name = "pydantic" },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/b7/48/f886519becb38ef4176e678210618b9d9aee16317f48a3c552c03e389269/openrouter-0.10.7.tar.gz", hash = "sha256:b4ceb79b239aecda54a87742b936ded92372d67bbb99d15fa14d7cdb47f80e4b", size = 340028, upload-time = "2026-06-26T23:50:35.165Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/d1/9b/e2ff034c97342837920b5517a59255a71e914ddb32b85b32ad4b64927219/openrouter-0.10.7-py3-none-any.whl", hash = "sha256:e08d67d49f272c682eeca4c1cc7cf8c6f807b5a57e58896fa36dc350edfc093a", size = 748380, upload-time = "2026-06-26T23:50:33.773Z" },
 ]
 
 [[package]]
