@@ -224,3 +224,5 @@ __marimo__/
 .sqlite
 
 checkpoints.sqlite
+
+memory.db
