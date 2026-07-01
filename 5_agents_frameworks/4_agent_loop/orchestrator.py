@@ -34,6 +34,7 @@ from google.adk.runners import InMemoryRunner  # noqa: E402
 from google.genai import types  # noqa: E402
 from rich.live import Live  # noqa: E402
 
+
 import board  # noqa: E402
 import catalog  # noqa: E402
 import config  # noqa: E402
@@ -318,4 +319,3 @@ def run(language: str, workers: list[dict], site_dir: Path, board_path: Path) ->
     asyncio.run(_run(team))
     _ensure_site(team)
     return team
-    
